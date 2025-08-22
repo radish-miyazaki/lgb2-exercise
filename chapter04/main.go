@@ -30,5 +30,6 @@ func main() {
 		total := total + 1
 		fmt.Printf("i=%v total=%v\n", i, total)
 	}
+	// total をシャドーイングしているため、0 が出力される
 	fmt.Printf("total=%v\n", total)
 }
