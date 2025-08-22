@@ -13,13 +13,14 @@ func main() {
 	}
 
 	for _, xs := range x {
-		if xs%2 == 0 || xs%3 == 0 {
+		switch {
+		case xs%6 == 0:
 			fmt.Println("Six!")
-		} else if xs%2 == 0 {
+		case xs%2 == 0:
 			fmt.Println("Fizz")
-		} else if xs%3 == 0 {
+		case xs%3 == 0:
 			fmt.Println("Buzz")
-		} else {
+		default:
 			fmt.Println("Never mind")
 		}
 	}
