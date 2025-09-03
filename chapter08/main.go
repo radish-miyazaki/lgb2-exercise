@@ -1,6 +1,7 @@
 package main
 
 import (
+	"chapter08/solution"
 	"errors"
 	"fmt"
 )
@@ -138,4 +139,47 @@ func main() {
 	fmt.Printf("4 is in List[%d]\n", l.Index(4))
 	fmt.Printf("5 is in List[%d]\n", l.Index(5))
 	fmt.Printf("6 is in List[%d]\n", l.Index(6))
+
+	ls := &solution.List[int]{}
+	ls.Add(5)
+	ls.Add(10)
+	fmt.Println(ls.Index(5))
+	fmt.Printf("5 is in List[%d]\n", ls.Index(5))
+	fmt.Printf("10 is in List[%d]\n", ls.Index(10))
+	fmt.Printf("20 is in List[%d]\n", ls.Index(20))
+
+	ls.Insert(100, 0)
+	fmt.Printf("5 is in List[%d]\n", ls.Index(5))
+	fmt.Printf("10 is in List[%d]\n", ls.Index(10))
+	fmt.Printf("20 is in List[%d]\n", ls.Index(20))
+	fmt.Printf("100 is in List[%d]\n", ls.Index(100))
+
+	ls.Insert(200, 1)
+	fmt.Printf("5 is in List[%d]\n", ls.Index(5))
+	fmt.Printf("10 is in List[%d]\n", ls.Index(10))
+	fmt.Printf("20 is in List[%d]\n", ls.Index(20))
+	fmt.Printf("100 is in List[%d]\n", ls.Index(200))
+
+	fmt.Println("=========================")
+	for curNode := ls.Head; curNode != nil; curNode = curNode.Next {
+		fmt.Println(curNode.Value)
+	}
+
+	fmt.Println("=========================")
+	ls.Insert(300, 10)
+	for curNode := ls.Head; curNode != nil; curNode = curNode.Next {
+		fmt.Println(curNode.Value)
+	}
+
+	fmt.Println("=========================")
+	ls.Add(400)
+	for curNode := ls.Head; curNode != nil; curNode = curNode.Next {
+		fmt.Println(curNode.Value)
+	}
+
+	fmt.Println("=========================")
+	ls.Insert(500, 6)
+	for curNode := ls.Head; curNode != nil; curNode = curNode.Next {
+		fmt.Println(curNode.Value)
+	}
 }
